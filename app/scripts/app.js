@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name newappApp
+ * @name newApp
  * @description
- * # newappApp
+ * # newApp
  *
  * Main module of the application.
  */
