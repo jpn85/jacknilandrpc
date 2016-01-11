@@ -26,4 +26,6 @@ angular.module('rockPaperScissorsApp', [
             .otherwise({
                 redirectTo: '/'
             });
+
+
     });
