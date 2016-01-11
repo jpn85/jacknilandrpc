@@ -2,14 +2,13 @@
 
 /**
  * @ngdoc overview
- * @name newApp
+ * @name rockPaperScissorsApp
  * @description
- * # newApp
+ * # rockPaperScissorsApp
  *
  * Main module of the application.
  */
-angular
-  .module('newApp', [
+angular.module('rockPaperScissorsApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -17,14 +16,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                controllerAs: 'main'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name newApp.controller:MainCtrl
+ * @name rockPaperScissorsApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the newApp
+ * Controller of the rockPaperScissorsApp
  */
-angular.module('newApp')
+angular.module('rockPaperScissorsApp')
     .controller('MainCtrl', function () {
         this.awesomeThings = [
       'HTML5 Boilerplate',
