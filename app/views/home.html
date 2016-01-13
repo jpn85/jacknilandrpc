@@ -15,68 +15,66 @@
 
     <!-- Choose game mode -->
     <div class="row">
-        <div class="col-sm-4">
-            <button ng-click="showPVC=true;resetResult();">Player vs Computer</button>
+        <div ng-hide="hideModes" class="col-sm-12">
+            <p>Options: </p>
+            <button ng-click="showPVC=true; showOptions=true; hideModes=true; ">Player vs Computer</button>
+
+            <button ng-click="showOptions=true;hideModes=true; computerMatch(); showResults=true;">Computer vs Computer</button>
+
+            <button ng-click="hideModes=true; showOptions=true; setRandomMatch()">Random</button>
+
         </div>
-        <div class="col-sm-4">
-            <button ng-click="showPVC=false;resetResult();computerMatch(); showResults=true;">Computer vs Computer</button>
+        <!-- Choose game mode end -->
+
+        <!-- Player  -->
+
+        <div class="PVC">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img ng-show="showOptions" class="options" src="/images/home/rockHand.svg">
+                    <button ng-show="showPVC" class="PVC" ng-click="setChoice1(rock); setChoice2(); showResults=true; match() ">Rock</button>
+                </div>
+                <div class="col-sm-4"><img ng-show="showOptions" class="options" class="options" src="/images/home/paperHand.svg">
+                    <button ng-show="showPVC" class="PVC" ng-click="setChoice1(paper); setChoice2(); showResults=true; match()">Paper</button>
+                </div>
+                <div class="col-sm-4"><img ng-show="showOptions" class="options" src="/images/home/scissorsHand.svg">
+                    <button ng-show="showPVC " class="PVC" ng-click="setChoice1(scissors); setChoice2(); showResults=true; match()">Scissors</button>
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-4">
-            <button ng-click="resetResult(); setRandomMatch()">Random</button>
+
+        <!-- Player end -->
+
+
+
+
+
+        <!-- Results -->
+        <div class="results">
+            <div class="row" ng-show="showResults">
+                <div class="col-sm-4">
+                    <p>Player one: {{lastChoice1}}</p>
+                </div>
+                <div class="col-sm-4 result">{{result}}
+                </div>
+                <div class="col-sm-4">
+                    <p>Player two: {{lastChoice2}}</p>
+                </div>
+
+            </div>
+
         </div>
+        <!-- Results end -->
+
+        <!-- Reset -->
+        <div class="reset" ng-show="showOptions">
+            <button ng-click=" reset()">New Game</button>
+        </div>
+
+
+        <!-- reset end -->
+
+
 
     </div>
-    <!-- Choose game mode end -->
-
-    <!-- Player  -->
-
-    <div class="PVC">
-        <div class="row">
-            <div class="col-sm-4" style="background-color:lavender;">
-                <img class="options" src="/images/home/rockHand.svg">
-                <button ng-show="showPVC" class="PVC" ng-click="setChoice1(rock); setChoice2(); showResults=true; match()">Rock</button>
-            </div>
-            <div class="col-sm-4" style="background-color:lavenderblush;"><img class="options" src="/images/home/paperHand.svg">
-                <button ng-show="showPVC" class="PVC" ng-click="setChoice1(paper); setChoice2(); showResults=true; match()">Paper</button>
-            </div>
-            <div class="col-sm-4" style="background-color:lavender;"><img class="options" src="/images/home/scissorsHand.svg">
-                <button ng-show="showPVC" class="PVC" ng-click="setChoice1(scissors); setChoice2(); showResults=true; match()">Scissors</button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Player end -->
-
-    <!-- Computer end -->
-
-
-
-
-
-    <!-- Results -->
-    <div class="results">
-        <div class="row" ng-show="showResults">
-            <div class="col-sm-4">
-                <p>Player one {{lastChoice1}}</p>
-            </div>
-            <div class="col-sm-4">{{result}}
-            </div>
-            <div class="col-sm-4">
-                <p>Player two {{lastChoice2}}</p>
-            </div>
-
-        </div>
-
-    </div>
-    <!-- Results end -->
-
-    <!-- Reset -->
-    <div class="reset">
-        <button ng-click="showPVC=false; reset()">Reset</button>
-    </div>
-    <!-- reset end -->
-
-
-
-</div>

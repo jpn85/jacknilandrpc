@@ -1,13 +1,34 @@
-body {}
-button {}
+body {
+    text-align: center;
+}
+button {
+    color: white;
+    background-color: #4278bd;
+    font-weight: 100;
+    padding: 10px 20px 10px 20px;
+    border: solid 1px #4278bd;
+    width: auto;
+    margin: 5px;
+}
 button:hover {
-    border: 5px solid yellow;
+    color: #4278bd;
+    background-color: white;
 }
 PVC {}
 .results {
-    background-color: #4CAF50;
+    color: grey;
+    font-size: 31px;
 }
 .options {
     max-height: 100px;
     padding: 5px;
+    margin: 5%;
+}
+.result {
+    background-color: #4278bd;
+    color: #FFCC33;
+    border: 2px dashed #FFCC33;
+}
+.reset {
+    padding: 30px;
 }

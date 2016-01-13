@@ -14,22 +14,7 @@ angular.module('rockPaperScissorsApp')
 
 
         $scope.result = undefined;
-        //        $scope.showOptions = false;
-        //
-        //        $scope.setOptions = function (res) {
-        //            $scope.showOptions = res;
-        //        };
 
-        //        $scope.showResults = false;
-        //
-        //        $scope.showResults = function (res) {
-        //            $scope.showResults = res;
-        //        };
-        //        $scope.showPVC = undefined;
-        //
-        //        $scope.setPVC = function (res) {
-        //            $scope.showPVC = res;
-        //        };
 
         $scope.pvc = 0;
         $scope.cvc = 1;
@@ -60,7 +45,6 @@ angular.module('rockPaperScissorsApp')
                 $scope.showOptions = true;
 
             }
-            console.log(x);
         };
 
         $scope.computerMatch = function () {
