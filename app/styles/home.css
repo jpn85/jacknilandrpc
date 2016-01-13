@@ -1,6 +1,13 @@
-button {
-    width: 100%;
-}
-.PVC button:hover {
+body {}
+button {}
+button:hover {
     border: 5px solid yellow;
+}
+PVC {}
+.results {
+    background-color: #4CAF50;
+}
+.options {
+    max-height: 100px;
+    padding: 5px;
 }

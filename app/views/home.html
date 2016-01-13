@@ -4,7 +4,6 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Rock, Paper, Scissors </a>
-                <button ng-click="showPVC=false; showResults=false; showOptions=false; reset()">Reset</button>
             </div>
 
         </div>
@@ -16,14 +15,14 @@
 
     <!-- Choose game mode -->
     <div class="row">
-        <div class="col-sm-4" style="background-color:blue;">
-            <button ng-click="showPVC=true; showOptions=true">Player vs Computer</button>
+        <div class="col-sm-4">
+            <button ng-click="showPVC=true;resetResult();">Player vs Computer</button>
         </div>
-        <div class="col-sm-4" style="background-color:red;">
-            <button ng-click="showOptions=true; computerMatch(); showResults=true; ">Computer vs Computer</button>
+        <div class="col-sm-4">
+            <button ng-click="showPVC=false;resetResult();computerMatch(); showResults=true;">Computer vs Computer</button>
         </div>
-        <div class="col-sm-4" style="background-color:green;">
-            <button ng-click="setRandomMatch()">Random</button>
+        <div class="col-sm-4">
+            <button ng-click="resetResult(); setRandomMatch()">Random</button>
         </div>
 
     </div>
@@ -32,15 +31,15 @@
     <!-- Player  -->
 
     <div class="PVC">
-        <div class="row" ng-show="showOptions">
+        <div class="row">
             <div class="col-sm-4" style="background-color:lavender;">
-                <img src="/images/home/rockHand.svg">
+                <img class="options" src="/images/home/rockHand.svg">
                 <button ng-show="showPVC" class="PVC" ng-click="setChoice1(rock); setChoice2(); showResults=true; match()">Rock</button>
             </div>
-            <div class="col-sm-4" style="background-color:lavenderblush;"><img src="/images/home/paperHand.svg">
+            <div class="col-sm-4" style="background-color:lavenderblush;"><img class="options" src="/images/home/paperHand.svg">
                 <button ng-show="showPVC" class="PVC" ng-click="setChoice1(paper); setChoice2(); showResults=true; match()">Paper</button>
             </div>
-            <div class="col-sm-4" style="background-color:lavender;"><img src="/images/home/scissorsHand.svg">
+            <div class="col-sm-4" style="background-color:lavender;"><img class="options" src="/images/home/scissorsHand.svg">
                 <button ng-show="showPVC" class="PVC" ng-click="setChoice1(scissors); setChoice2(); showResults=true; match()">Scissors</button>
             </div>
 
@@ -58,12 +57,12 @@
     <!-- Results -->
     <div class="results">
         <div class="row" ng-show="showResults">
-            <div class="col-sm-4" style="background-color:lavender;">
+            <div class="col-sm-4">
                 <p>Player one {{lastChoice1}}</p>
             </div>
-            <div class="col-sm-4" style="background-color:lavenderblush;">{{result}}
+            <div class="col-sm-4">{{result}}
             </div>
-            <div class="col-sm-4" style="background-color:lavender;">
+            <div class="col-sm-4">
                 <p>Player two {{lastChoice2}}</p>
             </div>
 
@@ -72,8 +71,11 @@
     </div>
     <!-- Results end -->
 
-
-
+    <!-- Reset -->
+    <div class="reset">
+        <button ng-click="showPVC=false; reset()">Reset</button>
+    </div>
+    <!-- reset end -->
 
 
 

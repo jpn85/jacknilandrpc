@@ -4,8 +4,7 @@
 angular.module('rockPaperScissorsApp')
     .controller('MainCtrl', ['$scope', function ($scope) {
 
-        $scope.player1 = undefined;
-        $scope.player2 = undefined;
+
 
         $scope.choice1 = undefined;
         $scope.choice2 = undefined;
@@ -15,17 +14,22 @@ angular.module('rockPaperScissorsApp')
 
 
         $scope.result = undefined;
-        $scope.showOptions = false;
+        //        $scope.showOptions = false;
+        //
+        //        $scope.setOptions = function (res) {
+        //            $scope.showOptions = res;
+        //        };
 
-        $scope.setOptions = function (res) {
-            $scope.showOptions = res;
-        };
-
-        $scope.showPVC = undefined;
-
-        $scope.setOptions = function (res) {
-            $scope.showPVC = res;
-        };
+        //        $scope.showResults = false;
+        //
+        //        $scope.showResults = function (res) {
+        //            $scope.showResults = res;
+        //        };
+        //        $scope.showPVC = undefined;
+        //
+        //        $scope.setPVC = function (res) {
+        //            $scope.showPVC = res;
+        //        };
 
         $scope.pvc = 0;
         $scope.cvc = 1;
@@ -48,24 +52,28 @@ angular.module('rockPaperScissorsApp')
 
         $scope.setRandomMatch = function () {
             var x = Math.floor((Math.random() * 2) + 0);
-//            if (x >= 5) {
-    //                $scope.showPVC = true;
-    //                $scope.showOptions = true;
-    //            } else if (x <= 5) {
-    //                $scope.computerMatch();
-    //            }
+            if (x >= 1) {
+                $scope.showPVC = true;
+                $scope.showOptions = true;
+            } else if (x <= 0) {
+                $scope.computerMatch();
+                $scope.showOptions = true;
+
+            }
             console.log(x);
         };
 
         $scope.computerMatch = function () {
 
-
             $scope.setChoice2();
+            $scope.showOptions = true;
+
             var y = $scope.choice2.valueOf();
             $scope.choice1 = y;
             $scope.choice2 = undefined;
             $scope.setChoice2();
-
+            $scope.showOptions = true;
+            $scope.showResults = true;
             $scope.match();
 
         };
@@ -122,18 +130,14 @@ angular.module('rockPaperScissorsApp')
         };
 
         $scope.reset = function () {
-            $scope.choice1 = undefined;
-            $scope.choice2 = undefined;
 
-            $scope.lastChoice1 = undefined;
-            $scope.lastChoice2 = undefined;
 
-            $scope.showOptions = false;
-
-            $scope.result = undefined;
+            location.reload();
 
 
         };
-
+        $scope.resetResult = function () {
+            $scope.result = undefined;
+        };
 
             }]);
