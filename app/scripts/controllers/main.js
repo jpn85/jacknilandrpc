@@ -25,7 +25,7 @@ angular.module('rockPaperScissorsApp')
         };
 
         $scope.setChoice2 = function () {
-            $scope.choice2 = Math.floor((Math.random() * 2) + 0);
+            $scope.choice2 = Math.floor((Math.random() * 3) + 0);
         };
 
         $scope.setRandomMatch = function () {
