@@ -15,10 +15,6 @@ angular.module('rockPaperScissorsApp')
 
         $scope.result = undefined;
 
-
-        $scope.pvc = 0;
-        $scope.cvc = 1;
-
         $scope.rock = 0;
         $scope.paper = 1;
         $scope.scissors = 2;
@@ -29,10 +25,7 @@ angular.module('rockPaperScissorsApp')
         };
 
         $scope.setChoice2 = function () {
-
             $scope.choice2 = Math.floor((Math.random() * 2) + 0);
-
-
         };
 
         $scope.setRandomMatch = function () {
@@ -45,6 +38,7 @@ angular.module('rockPaperScissorsApp')
                 $scope.showOptions = true;
 
             }
+            console.log(x);
         };
 
         $scope.computerMatch = function () {
@@ -87,9 +81,6 @@ angular.module('rockPaperScissorsApp')
 
         };
 
-
-
-
         $scope.setLastChoice1 = function () {
             var a = $scope.choice1.valueOf();
 
@@ -114,14 +105,78 @@ angular.module('rockPaperScissorsApp')
         };
 
         $scope.reset = function () {
-
-
             location.reload();
-
-
         };
         $scope.resetResult = function () {
             $scope.result = undefined;
         };
+
+
+        //        TESTING
+
+        $scope.testResult0 = function () {
+            $scope.choice1 = 0;
+            $scope.choice2 = 1;
+            $scope.match();
+
+            if ($scope.lastChoice1 === 'rock' && $scope.lastChoice2 === 'paper' && $scope.result === "Player two wins!") {
+                console.log("test passed");
+            } else {
+                console.log("test failed");
+
+            }
+        };
+
+        $scope.testResult1 = function () {
+            $scope.choice1 = 1;
+            $scope.choice2 = 1;
+            $scope.match();
+
+            if ($scope.lastChoice1 === 'paper' && $scope.lastChoice2 === 'paper' && $scope.result === "It's a draw!") {
+                console.log("test passed");
+            } else {
+                console.log("test failed");
+
+            }
+        };
+
+        $scope.testResult2 = function () {
+            $scope.choice1 = 2;
+            $scope.choice2 = 1;
+            $scope.match();
+
+            if ($scope.lastChoice1 === 'scissors' && $scope.lastChoice2 === 'paper' && $scope.result === "Player one wins!") {
+                console.log("test passed");
+            } else {
+                console.log("test failed");
+
+            }
+        };
+
+        $scope.testChoice0 = function () {
+            $scope.choice2 = 1;
+            $scope.match();
+            if ($scope.lastChoice2 === 'paper') {
+                console.log("test passed");
+            } else {
+                console.log("test failed");
+
+            }
+
+        };
+
+        $scope.testChoice1 = function () {
+            $scope.choice1 = 0;
+            $scope.match();
+            if ($scope.lastChoice1 === 'rock') {
+                console.log("test passed");
+            } else {
+                console.log("test failed");
+
+            }
+
+        };
+        //        End TESTING
+
 
             }]);
